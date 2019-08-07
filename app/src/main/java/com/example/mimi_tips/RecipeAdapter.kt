@@ -16,14 +16,14 @@ import androidx.recyclerview.widget.RecyclerView
 /***
  * The adapter class for the RecyclerView, contains the sports data
  */
-internal class SportsAdapter
+internal class RecipeAdapter
 /**
  * Constructor that passes in the sports data and the context
  * @param sportsData ArrayList containing the sports data
  * @param context Context of the application
  */
     (private val mContext: Context, //Member variables
-     private val mSportsData: ArrayList<Sport>) : RecyclerView.Adapter<SportsAdapter.ViewHolder>() {
+     private val mRecipeData: ArrayList<Recipe>) : RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
 
 
     /**
@@ -31,7 +31,7 @@ internal class SportsAdapter
      * @return Size of the data set.
      */
     override  fun getItemCount(): Int {
-        return mSportsData.size
+        return mRecipeData.size
     }
 
     /**
@@ -40,7 +40,7 @@ internal class SportsAdapter
      * @param viewType The view type of the new View.
      * @return The newly create ViewHolder.
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SportsAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeAdapter.ViewHolder {
         return ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false))
     }
 
@@ -49,14 +49,14 @@ internal class SportsAdapter
      * @param holder The viewholder into which the data should be put.
      * @param position The adapter position.
      */
-    override fun onBindViewHolder(holder: SportsAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecipeAdapter.ViewHolder, position: Int) {
         //Get current sport
-        val currentSport = mSportsData[position]
+        val currentRecipe = mRecipeData[position]
 
         //Populate the imageviews with data image using Glide Library
-        Glide.with(mContext).load(currentSport.getImageResource()).into(holder.mSportsImage)
+        Glide.with(mContext).load(currentRecipe.getImageResource()).into(holder.mRecipeImage)
         //Populate the textviews with data
-        holder.bindTo(currentSport)
+        holder.bindTo(currentRecipe)
     }
 
 
@@ -70,33 +70,36 @@ internal class SportsAdapter
          */
         private var mTitleText: TextView
         private var mInfoText: TextView
-        //Add a variable in the SportsAdapter class, ViewHolder class for the ImageView, and initialize it in the ViewHolder constructor
-        var mSportsImage : ImageView
+
+        //Add a variable in the RecipeAdapter class, ViewHolder class for the ImageView, and initialize it in the ViewHolder constructor
+        var mRecipeImage : ImageView
 
 
         init {
             //Member Variables for the TextViews
             mTitleText = itemView.findViewById(R.id.title)
             mInfoText = itemView.findViewById(R.id.subTitle)
-            mSportsImage = itemView.findViewById(R.id.sportsImage)
+            mRecipeImage = itemView.findViewById(R.id.sportsImage)
 
             itemView.setOnClickListener{ _: View ->
                 //var sportPosition: Int = this.adapterPosition
-                val currentSport : Sport = mSportsData[adapterPosition]
+                val currentRecipe : Recipe = mRecipeData[adapterPosition]
 
                 val detailIntent = Intent(mContext, DetailActivity::class.java)
-                detailIntent.putExtra("title", currentSport.title)
-                detailIntent.putExtra("image_resource", currentSport.getImageResource())
+                detailIntent.putExtra("title", currentRecipe.title)
+                detailIntent.putExtra("detail", currentRecipe.detail)
+                detailIntent.putExtra("image_resource", currentRecipe.getImageResource())
 
                 mContext.startActivity(detailIntent)
             }
 
         }
 
-        fun bindTo(currentSport: Sport) {
+        fun bindTo(currentRecipe: Recipe) {
             //Populate the textviews with data
-            mTitleText.text = currentSport.title
-            mInfoText.text = currentSport.info
+            mTitleText.text = currentRecipe.title
+            mInfoText.text = currentRecipe.info
+            //mDetailText.text = currentRecipe.detail
 
         }
 

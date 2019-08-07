@@ -15,15 +15,17 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        //initialize the ImageView and title TextView
-        val sportsTitle : TextView = findViewById<View>(R.id.titleDetail) as TextView
-        val sportsImage : ImageView = findViewById<View>(R.id.sportsImageDetail) as ImageView
+        //initialize the ImageView, title TextView and detail TextView
+        val recipeTitle : TextView = findViewById<View>(R.id.titleDetail) as TextView
+        val recipeDetail : TextView = findViewById(R.id.subTitleDetail) as TextView
+        val recipeImage : ImageView = findViewById<View>(R.id.sportsImageDetail) as ImageView
 
         //Get the title from the incoming Intent and set it to the TextView
-        sportsTitle.text = intent.getStringExtra("title")
+        recipeTitle.text = intent.getStringExtra("title")
+        recipeDetail.text = intent.getStringExtra("detail")
 
         //Use Glide to load the image into the ImageView
-        Glide.with(this).load(intent.getIntExtra("image_resource",0)).into(sportsImage)
+        Glide.with(this).load(intent.getIntExtra("image_resource",0)).into(recipeImage)
 
     }
 }

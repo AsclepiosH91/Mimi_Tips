@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     //Member variables
     private lateinit var mRecyclerView: RecyclerView
-    private lateinit var mSportsData: ArrayList<Sport>
-    private lateinit var mAdapter: SportsAdapter
+    private lateinit var mRecipeData: ArrayList<Recipe>
+    private lateinit var mAdapter: RecipeAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,10 +61,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mRecyclerView.layoutManager = GridLayoutManager(this,gridColumnCount)
 
         //Initialize the ArrayLIst that will contain the data
-        mSportsData = ArrayList()
+        mRecipeData = ArrayList()
 
         //Initialize the adapter and set it ot the RecyclerView
-        mAdapter = SportsAdapter(this, mSportsData)
+        mAdapter = RecipeAdapter(this, mRecipeData)
         mRecyclerView.adapter = mAdapter
 
         //Get the data
@@ -85,14 +85,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 val from = viewHolder.adapterPosition
                 val to = target.adapterPosition
-                Collections.swap(mSportsData, from, to)
+                Collections.swap(mRecipeData, from, to)
                 mAdapter.notifyItemMoved(from, to)
 
                 return true
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                mSportsData.removeAt(viewHolder.adapterPosition)
+                mRecipeData.removeAt(viewHolder.adapterPosition)
                 mAdapter.notifyItemRemoved(viewHolder.adapterPosition)
             }
 
@@ -109,19 +109,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
      */
     private fun initializeData() {
         //Get the resources from the XML file
-        val sportsList = resources.getStringArray(R.array.sports_titles)
-        val sportsInfo = resources.getStringArray(R.array.sports_info)
-        val sportsImageResources = resources.obtainTypedArray(R.array.sports_images)
+        val recipeList = resources.getStringArray(R.array.sports_titles)
+        val recipeInfo = resources.getStringArray(R.array.sports_info)
+        val recipeDetail = resources.getStringArray(R.array.sports_detail)
+        val recipeImageResources = resources.obtainTypedArray(R.array.sports_images)
 
         //Clear the existing data (to avoid duplication)
-        mSportsData.clear()
+        mRecipeData.clear()
 
         //Create the ArrayList of Sports objects with the titles and information about each sport
-        for (i in sportsList.indices) {
-            mSportsData.add(Sport(sportsList[i], sportsInfo[i], sportsImageResources.getResourceId(i,0)))
+        for (i in recipeList.indices) {
+            mRecipeData.add(Recipe(recipeList[i], recipeInfo[i], recipeDetail[i],  recipeImageResources.getResourceId(i,0)))
         }
-        //Clean up the data in the typed array once you have created the Sport data ArrayList
-        sportsImageResources.recycle()
+        //Clean up the data in the typed array once you have created the Recipe data ArrayList
+        recipeImageResources.recycle()
 
         //Notify the adapter of the change
         mAdapter.notifyDataSetChanged()

@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/subTitleDetail"
                 android:layout_below="@id/newsTitleDetail"
-                android:text="Lorem ipsum dolor sit amet."
+                android:text="@string/detail_placeholder"
                 android:padding="16dp"
                 style="@style/SportsDetailTitle" />
 

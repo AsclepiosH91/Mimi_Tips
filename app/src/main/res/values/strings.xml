@@ -19,6 +19,7 @@
     <string name="sports_info_placeholder">Here is some news</string>
     <string name="main_activity_label">News</string>
     <string name="detail_activity_label">Details</string>
+    <string name="detail_placeholder">Detail</string>
 
     <string-array name="sports_titles">
         <item>Baseball</item>
@@ -46,6 +47,20 @@
         <item>Here is some Swimming news!</item>
         <item>Here is some Table Tennis news!</item>
         <item>Here is some Tennis news!</item>
+    </string-array>
+
+    <string-array name="sports_detail">
+        <item>Baseball is a bat-and-ball game played between two opposing teams who take turns batting and fielding...</item>
+        <item>Badminton is a racquet sport played using racquets to hit a shuttlecock across a net...</item>
+        <item>Basketball is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball...</item>
+        <item>Bowling is a target sport and recreational activity in which a player rolls or throws a bowling ball toward pins...</item>
+        <item>Cycling, also called biking or bicycling, is the use of bicycles for transport, recreation, exercise or sport...</item>
+        <item>Golf is a club-and-ball sport in which players use various clubs to hit balls into a series of holes on a course in as few strokes as possible...</item>
+        <item>Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot...</item>
+        <item>Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal...</item>
+        <item>Swimming is an individual or team sport that requires the use of one\'s entire body to move through water...</item>
+        <item>Table tennis, also known as ping-pong, is a sport in which two or four players hit a lightweight ball back and forth across a table using small rackets...</item>
+        <item>Tennis is a racket sport that can be played individually against a single opponent...</item>
     </string-array>
 
     <array name="sports_images">
