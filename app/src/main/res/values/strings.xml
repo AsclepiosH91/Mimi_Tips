@@ -16,7 +16,7 @@
 
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">News</string>
-    <string name="sports_info_placeholder">Here is some news</string>
+    <string name="recipe_info_placeholder">Here is some news</string>
     <string name="main_activity_label">News</string>
     <string name="detail_activity_label">Details</string>
     <string name="detail_placeholder">Detail</string>
@@ -76,6 +76,70 @@
         <item>@drawable/img_tabletennis</item>
         <item>@drawable/img_tennis</item>
     </array>
+
+
+    <string-array name="recipe_titles">
+        <item>Lesive</item>
+        <item>Savon</item>
+    </string-array>
+
+
+
+    <string-array name="recipe_info">
+        <item>Recette de la Lessive</item>
+        <item>Recette du Savon</item>
+    </string-array>
+
+    <string-array name="recipe_detail">
+        <item>
+            •	Ingrédients :
+            - 1 L d\’eau
+            - 40 à 50 g de copeaux de savon de Marseille
+            - 2 cuillères à soupe de bicarbonate de soude
+            - 15 goutes d\’huile essentielles de lavande
+
+            •	Préparation :
+            Faire chauffer l\’eau
+            Faire fondre le savon de Marseille dans l\’eau
+            Diminuer le feu et ajouter le bicarbonate
+            Laisser refroidir en touillant régulièrement
+            Une fois refroidit, ajouter les huiles essentielles
+            Mettre la lessive dans un contenant en verre
+             
+            Adoucissant
+            Quelques gouttes de vinaigre blanc
+        </item>
+        <item>Finit les gels douches avec des compositions néfastes pour le corps et la nature. Et vive le zéro déchet avec le savon solide.
+
+            Utiliser du savon de Marseille
+            De préférence des savonneries artisanales suivantes :
+            Fer à Cheval, Marius Fabre, La Corvette
+
+            Utiliser du savon d\’Alep
+            De préférence de la marque Alépia
+
+            Si vraiment il vous faut du savon liquide, aller dans des magasins en vrac avec votre flacon pour le remplir de savon liquide. Comme chez Day by Day
+        </item>
+    </string-array>
+
+
+    <array name="recipe_images">
+        <item>@drawable/img_lessive</item>
+        <item>@drawable/img_savon</item>
+    </array>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </resources>

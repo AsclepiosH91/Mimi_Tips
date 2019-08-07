@@ -109,10 +109,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
      */
     private fun initializeData() {
         //Get the resources from the XML file
-        val recipeList = resources.getStringArray(R.array.sports_titles)
-        val recipeInfo = resources.getStringArray(R.array.sports_info)
-        val recipeDetail = resources.getStringArray(R.array.sports_detail)
-        val recipeImageResources = resources.obtainTypedArray(R.array.sports_images)
+        //val recipeList = resources.getStringArray(R.array.sports_titles)
+        //val recipeInfo = resources.getStringArray(R.array.sports_info)
+        //val recipeDetail = resources.getStringArray(R.array.sports_detail)
+        //val recipeImageResources = resources.obtainTypedArray(R.array.sports_images)
+        val recipeList = resources.getStringArray(R.array.recipe_titles)
+        val recipeInfo = resources.getStringArray(R.array.recipe_info)
+        val recipeDetail = resources.getStringArray(R.array.recipe_detail)
+        val recipeImageResources = resources.obtainTypedArray(R.array.recipe_images)
+
+
 
         //Clear the existing data (to avoid duplication)
         mRecipeData.clear()
